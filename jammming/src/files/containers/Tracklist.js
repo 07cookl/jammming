@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-// import styles from './styles/Tracklist.module.css';
-import Track from './Track'
-import {tracks} from '../mock-data/tracks'
+import styles from './styles/Tracklist.module.css';
+import Track from './Track.js';
+import { get } from '../mock-data/fetch.js';
 
 function Tracklist () {
     const [tracks, setTracks] = useState([]);
 
 
     useEffect(() => {
-        get('../mock-data/tracks').then((response) => setTracks(response.data));
+        get('/tracks').then((response) => setTracks(response.data));
     }, []);
-
+    console.log(tracks);
     return (
         <>
         <nav>
@@ -19,7 +19,7 @@ function Tracklist () {
             ))}
         </nav>
         </>
-    )
-}
+    );
+};
 
-export default Tracklist
+export default Tracklist;

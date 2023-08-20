@@ -1,52 +1,30 @@
-export const tracks = [
-    {
+import artwork from '../mock-data/Photo.png';
+
+const getRandomId = () => `${Math.random()}-${Math.random()}`;
+
+const getRandomNumber = (min, range) =>
+  Math.floor((Math.random() * 100 * range) / 100) + min;
+
+const randomFromList = (list) => list[getRandomNumber(0, list.length)];
+
+const songs = ['song1', 'song2', 'song3', 'song4', 'song5']
+
+const artists = ['Taylor Swift', 'Fall Out Boy', 'My Chemical Romance', 'Katy Perry', 'Dire Straits']
+
+const albums = ['add', 'subtract', 'multiply', 'divide', 'equal']
+
+const getTracks = () => ({
         images: {
-            url: './Photo.png',
+            url: artwork,
             height: 300,
             width: 300
         },
-        name: "song 1",
-        artist: "artist 1",
-        album: "album 1"
-    },
-    {
-        images: {
-            url: './Photo.png',
-            height: 300,
-            width: 300
-        },
-        name: "song 2",
-        artist: "artist 2",
-        album: "album 2"
-    },
-    {
-        images: {
-            url: './Photo.png',
-            height: 300,
-            width: 300
-        },
-        name: "song 3",
-        artist: "artist 3",
-        album: "album 3"
-    },
-    {
-        images: {
-            url: './Photo.png',
-            height: 300,
-            width: 300
-        },
-        name: "song 4",
-        artist: "artist 4",
-        album: "album 4"
-    },
-    {
-        images: {
-            url: './Photo.png',
-            height: 300,
-            width: 300
-        },
-        name: "song 5",
-        artist: "artist 5",
-        album: "album 5"
-    }
-]
+        name: randomFromList(songs),
+        artist: randomFromList(artists),
+        album: randomFromList(albums),
+        id: getRandomId()
+    });
+
+    export default {
+    "/tracks": Array.from({ length: 8 }, getTracks)
+}

@@ -1,13 +1,14 @@
 import React from 'react';
-import SearchBar from './files/containers/SearchBar';
-import SearchResults from './files/containers/SearchResults';
-import Playlist from './files/containers/Playlist';
+import SearchBar from './files/containers/SearchBar.js';
+import SearchResults from './files/containers/SearchResults.js';
+import Playlist from './files/containers/Playlist.js';
+import logo from './files/Designs/Logo.png';
 
 function App() {
   return (
     <>
       <div>
-        <img className="logo" src="./files/Designs/Logo.png" />
+        <img className="logo" alt="Logo" src={logo} />
       </div>
       <SearchBar />
       <SearchResults />
