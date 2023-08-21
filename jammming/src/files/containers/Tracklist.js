@@ -10,12 +10,11 @@ function Tracklist () {
     useEffect(() => {
         get('/tracks').then((response) => setTracks(response.data));
     }, []);
-    console.log(tracks);
     return (
         <>
         <nav>
             {tracks.map((track) => (
-                <Track trackObject = {track} />
+                <Track trackObject = {track} key={track.id} />
             ))}
         </nav>
         </>

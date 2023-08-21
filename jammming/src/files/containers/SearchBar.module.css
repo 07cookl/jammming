@@ -1,25 +1,33 @@
 .inputGroup {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 600px;
+    margin: 80px 0;
 }
 
 .input {
     min-height: 50px;
-    max-width: 600px;
+    width: 60%;
     padding: 0 1rem;
     color: #fff;
     font-size: 15px;
-    border: 1px solid #5e4dcd;
+    border: 1px solid #f8b500;
     border-radius: 6px 0 0 6px;
-    background-color: transparent;
+    background-color: rgba(248, 182, 0, 0.442);
+}
+
+input::placeholder {
+    color: #fff;
 }
 
 .buttonSubmit {
     min-height: 50px;
+    width: 20%;
     padding: .5em 1em;
-    border: none;
+    border: 1px solid #f8b500;
     border-radius: 0 6px 6px 0;
-    background-color: #5e4dcd;
+    background-color: #f8b500;
     color: #fff;
     font-size: 15px;
     cursor: pointer;
@@ -27,10 +35,10 @@
 }
 
 .buttonSubmit:hover {
-    background-color: #5e5dcd;
+    background-color: #ffc62c;
 }
 
 .input:focus, .input:focus-visible {
-    border-color: #3898EC;
+    border-color: #c59000;
     outline: none;
 }

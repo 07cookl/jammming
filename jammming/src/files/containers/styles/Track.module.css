@@ -1,0 +1,16 @@
+.trackContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.albumArt {
+    height: 150px;
+}
+
+.trackInfo {
+    list-style: none;
+    line-height: 2;
+    font-size: 1.2rem;
+}
