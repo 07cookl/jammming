@@ -1,23 +1,33 @@
-const clientId = '908ee3477a9c470ca898f450dd70b945'; // Insert client ID here.
-const redirectUri = 'http://localhost:3000/'; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
-let accessToken;
-
 const Spotify = {
-  getAccessToken() {
-    if (accessToken) {
-      return accessToken;
-    }
+  async search(term) {
+    const url = `https://spotify23.p.rapidapi.com/search/?q=${term}&type=multi&offset=0&limit=10&numberOfTopResults=5`;
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': '328abf0619mshdd593e09bcb1465p17cb8fjsnd68879cd67d5',
+        'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+      }
+    };
 
-    const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
-    const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
-    if (accessTokenMatch && expiresInMatch) {
-      accessToken = accessTokenMatch[1];
-      const expiresIn = Number(expiresInMatch[1]);
-      window.setTimeout(() => accessToken = '', expiresIn * 1000);
-      window.history.pushState('Access Token', null, '/'); // This clears the parameters, allowing us to grab a new access token when it expires.
-      return accessToken;
-    } else {
-      const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
-      window.location = accessUrl;
-    }
-  },
+    const response = await fetch(url, options);
+    const jsonResponse = await response.json();
+
+    return jsonResponse.tracks.items?.map(track => ({
+      id: track.data.id,
+      name: track.data.name,
+      artist: track.data.artists.items[0].name,
+      album: track.data.albumOfTrack.name,
+      artwork: track.data.albumOfTrack.coverArt.sources[0].url,
+      duration: track.data.duration,
+      uri: track.data.uri
+    }));
+},
+
+savePlaylist(name, trackUris) {
+  if (!name || !trackUris.length) {
+    return;
+  }
+}
+};
+console.log(Spotify.search('sandstorm'));
+export default Spotify;

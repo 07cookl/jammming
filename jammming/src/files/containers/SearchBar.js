@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styles from './SearchBar.module.css';
 
-function SearchBar() {
+function SearchBar(props) {
 
-    const [search, setSearch] = useState('');
+    const [term, setTerm] = useState('');
 
-    const submitHandler = (e) => {
-        e.preventDefault();
-    }
+    const handleSubmit = useCallback(() => {
+        props.onSearch(term);
+    }, [props.onSearch, term])
 
     return (
         <>
-        <form className={styles.inputGroup} onSubmit={submitHandler}>
-            <input onChange={({target}) => setSearch(target.value)} value={search} type="text" className={styles.input} id="search" name="search" placeholder="Search for a song or an artist..." />
-            <input className={styles.buttonSubmit} value="Search" type="submit" />
-        </form>
+        <div className={styles.inputGroup}>
+            <input onChange={({target}) => setTerm(target.value)} value={term} className={styles.input} id="search" placeholder="Search for a song or an artist..." />
+            <button className={styles.buttonSubmit} onClick={handleSubmit}>Search</button>
+        </div>
         </>
     )
 }

@@ -1,0 +1,41 @@
+section {
+    border: 1px solid #f8b500;
+    padding: 20px;
+    margin: 0 auto;
+    max-height: 800px;
+    overflow: scroll;
+    overflow-x: auto;
+    background-color: #6e789f;
+    border-radius: 8px;
+    scrollbar-width: 10px;
+    scrollbar-color: #7E57C2 transparent;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f8b500;
+    border-radius: 10px;
+    border: 2.5px solid transparent;
+    background-clip: content-box;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    min-height: 50px;
+    width: 60%;
+    padding: 0 1rem;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid #f8b500;
+    border-radius: 6px;
+    background-color: rgba(248, 182, 0, 0.442);
+}

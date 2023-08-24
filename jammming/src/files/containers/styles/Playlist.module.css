@@ -1,0 +1,39 @@
+.saveButton {
+    width: 90%;
+    padding: 1.5em 1em;
+    margin: 20px 0;
+    border: 1px solid #f8b500;
+    border-radius: 6px;
+    background-color: #c59000;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+    position: relative;
+    left: 5%;
+}
+
+.saveButton:hover {
+    background-color: #ffc62c;
+}
+
+.playlistName {
+    min-height: 50px;
+    width: 60%;
+    padding: 0 1rem;
+    margin: 16px 0;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid #f8b500;
+    border-radius: 6px;
+    background-color: rgba(248, 182, 0, 0.442);
+}
+
+.playlistName:focus, .playlistName:focus-visible {
+    border-color: #c59000;
+    outline: none;
+}
+
+.playlistName::placeholder {
+    color: #fff;
+}

@@ -22,6 +22,7 @@ const getTracks = () => ({
         name: randomFromList(songs),
         artist: randomFromList(artists),
         album: randomFromList(albums),
+        list: "searchResult",
         id: getRandomId()
     });
 

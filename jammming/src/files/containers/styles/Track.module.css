@@ -3,14 +3,46 @@
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 20px;
+    background-color: #6e789f;
 }
 
 .albumArt {
     height: 150px;
 }
 
+.infoContainer {
+    height: 150px;
+    width: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
 .trackInfo {
-    list-style: none;
-    line-height: 2;
-    font-size: 1.2rem;
+    position: relative;
+    left: 5%;
+    /* font-size: 1.2rem; */
+}
+
+p {
+    margin: 0;
+}
+
+.actionButton {
+    width: 90%;
+    padding: .5em 1em;
+    border: 1px solid #f8b500;
+    border-radius: 6px;
+    background-color: #c59000;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+    margin: 0;
+    position: relative;
+    left: 5%;
+}
+
+.actionButton:hover {
+    background-color: #ffc62c;
 }

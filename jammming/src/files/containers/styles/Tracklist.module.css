@@ -1,8 +1,27 @@
-nav {
-    border: 1px solid #000;
+section {
+    border: 1px solid #f8b500;
     padding: 20px;
     margin: 0 auto;
-    margin-bottom: 80px;
     max-height: 800px;
     overflow: scroll;
+    overflow-x: auto;
+    background-color: #6e789f;
+    border-radius: 8px;
+    scrollbar-width: 10px;
+    scrollbar-color: #7E57C2 transparent;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f8b500;
+    border-radius: 10px;
+    border: 2.5px solid transparent;
+    background-clip: content-box;
 }
