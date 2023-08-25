@@ -1,0 +1,130 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.trackContainer {
+    height: 16rem;
+    width: 13rem;
+    margin-bottom: 5rem;
+}
+
+.albumArt {
+    width: 13rem;
+    border-radius: 1rem;
+}
+
+.infoContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trackInfo {
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    padding: 0 0.5rem;
+    height: 5.5rem;
+}
+
+.songTitle {
+    color: #fff;
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    width: 10rem;
+    max-height: 3.25rem;
+    overflow: hidden;
+}
+
+.artistName {
+    color: #A5A5A5;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    margin: 0;
+}
+
+.actionButtonAdd {
+    padding: 0;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    width: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: #FA5A00;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+}
+
+.trackContainerPlaylist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 18rem;
+    padding: 0;
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.albumArtPlaylist {
+    width: 4rem;
+    border-radius: 1rem;
+}
+
+.infoContainerPlaylist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trackInfoPlaylist {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 8rem;
+    height: 4.5rem;
+    padding-right: 0.75rem;
+}
+
+.songTitlePlaylist {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 8rem;
+    color: #fff;
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.125rem;
+    max-height: 3rem;
+    overflow: hidden;
+}
+
+.artistNamePlaylist {
+    color: #A5A5A5;
+    font-weight: 400;
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.durationPlaylist {
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: #fff;
+}
+
+.actionButtonRemove {
+    padding: 0;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    width: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: #FA5A00;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+}

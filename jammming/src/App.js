@@ -27,9 +27,13 @@ function App() {
     setPlaylistTracks((prevTracks) => prevTracks.filter((currentTrack) => (currentTrack.id !== track.id)));
   }, []);
 
-  const onSave = () => {
-
-  }
+  const savePlaylist = useCallback(() => {
+    const trackUris = playlistTracks.map((track => track.uri));
+    Spotify.savePlaylist(playlistName, trackUris).then(() => {
+      setPlaylistName("New Playlist");
+      setPlaylistTracks([]);
+    }, [playlistName, playlistTracks]);
+  });
 
   const updatePlaylistName = useCallback((name) => {
     setPlaylistName(name);
@@ -48,7 +52,7 @@ function App() {
           playlistTracks={playlistTracks}
           onNameChange={updatePlaylistName}
           onRemove={onRemove} 
-          onSave={onSave}
+          onSave={savePlaylist}
           />
       </div>
     </div>

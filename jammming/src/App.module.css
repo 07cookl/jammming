@@ -1,22 +1,22 @@
 body {
-  display: flex;
+  /* display: flex; */
   background-color: #111111;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .app {
-  display: flex;
+  /* display: flex; */
   width: 90vw;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-direction: column; */
   background-color: #576083;
 }
 
 .lists {
   width: 90%;
-  display: flex;
-  justify-content: space-around;
+  /* display: flex; */
+  /* justify-content: space-around; */
 }
 
 .logo {
