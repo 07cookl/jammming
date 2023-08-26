@@ -4,7 +4,7 @@ let accessToken;
 
 const Spotify = {
   async search(term) {
-    const url = `https://spotify23.p.rapidapi.com/search/?q=${term}&type=multi&offset=0&limit=10&numberOfTopResults=5`;
+    const url = `https://spotify23.p.rapidapi.com/search/?q=${term}&type=multi&offset=0&limit=24&numberOfTopResults=5`;
     const options = {
       method: 'GET',
       headers: {

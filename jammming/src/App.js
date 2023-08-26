@@ -2,7 +2,7 @@ import React, { useState , useCallback } from 'react';
 import SearchBar from './files/containers/SearchBar.js';
 import SearchResults from './files/containers/SearchResults.js';
 import Playlist from './files/containers/Playlist.js';
-import logo from './files/Designs/Logo.png';
+import logo from './files/Designs/headphone.png';
 import styles from './App.module.css';
 import Spotify from './util/Spotify.js'
 
@@ -41,11 +41,15 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <div className={styles.logoDiv}>
+      <div className={styles.headerDiv}>
         <img className={styles.logo} alt="Logo" src={logo} />
+        <div className={styles.headerContainer}>
+          <h2 className={styles.jammming}>Ja<span>mmm</span>ing</h2>
+          <h3 className={styles.tagline}>What are you jammming to today?</h3>
+        </div>
       </div>
       <SearchBar onSearch={search} />
-      <div className={styles.lists}>
+      <div>
         <SearchResults searchResults={searchResults} onAdd={addTrack} />
         <Playlist 
           playlistName={playlistName}

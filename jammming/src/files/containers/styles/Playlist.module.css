@@ -1,39 +1,56 @@
-.saveButton {
-    width: 90%;
-    padding: 1.5em 1em;
-    margin: 20px 0;
-    border: 1px solid #f8b500;
-    border-radius: 6px;
-    background-color: #c59000;
-    color: #fff;
-    font-size: 15px;
-    cursor: pointer;
-    transition: background-color .3s ease-in-out;
-    position: relative;
-    left: 5%;
+.playlistContainer {
+    background-color: rgba(67, 62, 72, 0.3);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 22rem;
+    height: 28rem;
 }
 
-.saveButton:hover {
-    background-color: #ffc62c;
+.playlistHeader {
+    width: 21rem;
+    margin-left: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .playlistName {
-    min-height: 50px;
-    width: 60%;
-    padding: 0 1rem;
-    margin: 16px 0;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 800;
     color: #fff;
-    font-size: 15px;
-    border: 1px solid #f8b500;
-    border-radius: 6px;
-    background-color: rgba(248, 182, 0, 0.442);
-}
-
-.playlistName:focus, .playlistName:focus-visible {
-    border-color: #c59000;
-    outline: none;
+    background-color: transparent;
+    border: none;
 }
 
 .playlistName::placeholder {
     color: #fff;
+}
+
+.playlistLength {
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 400;
+    color: #A5A5A5;
+}
+
+.saveButton {
+    width: 20rem;
+    margin: 1rem 0;
+    padding: 0.75rem 0;
+    border: none;
+    border-radius: 7.5rem;
+    background-color: #FA5A00;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.saveButton:hover {
+    background-color: #bd4905;
 }

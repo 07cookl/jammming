@@ -1,0 +1,33 @@
+.inputGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.input {
+    width: 18rem;
+    height: 2.5rem;
+    padding-left: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #fff;
+    background-color: rgba(67, 62, 72, 0.3);
+    border: 1px solid #3B3B3B;
+}
+
+.input::placeholder {
+    color: #A5A5A5;
+}
+
+.buttonSubmit {
+    background-color: transparent;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    border: none;
+    background-image: url(../../Designs/search.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
