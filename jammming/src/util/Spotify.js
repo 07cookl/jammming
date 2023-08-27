@@ -4,7 +4,7 @@ let accessToken;
 
 const Spotify = {
   async search(term) {
-    const url = `https://spotify23.p.rapidapi.com/search/?q=${term}&type=multi&offset=0&limit=24&numberOfTopResults=5`;
+    const url = `https://spotify23.p.rapidapi.com/search/?q=${term}&type=multi&offset=0&limit=12&numberOfTopResults=5`;
     const options = {
       method: 'GET',
       headers: {
@@ -16,7 +16,7 @@ const Spotify = {
     const response = await fetch(url, options);
     const jsonResponse = await response.json();
 
-    return jsonResponse.tracks.items?.map(track => ({
+    return jsonResponse.tracks.items.map(track => ({
       id: track.data.id,
       name: track.data.name,
       artist: track.data.artists.items[0].profile.name,
@@ -46,36 +46,58 @@ getAccessToken() {
   }
 },
 
-savePlaylist(name, trackUris) {
+// async search(term) {
+//   const accessToken = Spotify.getAccessToken();
+//   await new Promise(resolve => setTimeout(resolve, 2000));
+//   const response = await fetch(`https://api.spotify.com/v1/search?q=${term}`, {
+//     headers: {
+//       Authorization: `Bearer ${accessToken}`
+//     }
+//   });
+//   const jsonResponse = await response.json();
+//   if (!jsonResponse.tracks) {
+//     return [];
+//   }
+//   return jsonResponse.tracks.items.map(track => ({
+//     id: track.id,
+//     name: track.name,
+//     artist: track.artists[0].name,
+//     album: track.album.name,
+//     uri: track.uri,
+//     artwork: track.album.images[0].url,
+//     duration: track.duration_ms
+//   }));
+// },
+
+async savePlaylist(name, trackUris) {
   if (!name || !trackUris.length) {
     return;
   }
 
   const accessToken = Spotify.getAccessToken();
+  await new Promise(resolve => setTimeout(resolve, 2000));
   const headers = { Authorization: `Bearer ${accessToken}` };
   let userId;
 
   return fetch('https://api.spotify.com/v1/me', {headers: headers}
   ).then(response => response.json()
-  ).then(jsonResponse => {
+  ).then(async jsonResponse => {
     userId = jsonResponse.id;
-    return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
+    const response = await fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
       headers: headers,
       method: 'POST',
-      body: JSON.stringify({name: name})
-    }).then(response => response.json()
-    ).then(jsonResponse => {
-      const playlistId = jsonResponse.id;
-      return fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, {
-        headers: headers,
-        method: 'POST',
-        body: JSON.stringify({uris: trackUris})
-      });
+      body: JSON.stringify({ name: name })
+    });
+    const jsonResponse_1 = await response.json();
+    const playlistId = jsonResponse_1.id;
+    return await fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, {
+      headers: headers,
+      method: 'POST',
+      body: JSON.stringify({ uris: trackUris })
     });
   });
 }
 };
-Spotify.search('sandstorm');
 
 
 export default Spotify;

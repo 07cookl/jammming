@@ -11,7 +11,6 @@ function SearchBar(props) {
 
     return (
         <div className={styles.inputGroup}>
-            <button className={styles.buttonSubmit} id="button" onClick={handleSubmit}></button>
             <input 
                 onChange={({target}) => setTerm(target.value)} 
                 value={term} 
@@ -20,6 +19,7 @@ function SearchBar(props) {
                 placeholder="Search for a jam..." 
                 onKeyDown={(e) => e.key === "Enter" ? document.getElementById("button").click() : ''} 
             />
+            <button className={styles.buttonSubmit} id="button" onClick={handleSubmit}></button>
         </div>
     )
 }

@@ -21,13 +21,13 @@
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 800;
-    color: #fff;
+    color: rgba(255,255,255,0.8);
     background-color: transparent;
     border: none;
 }
 
 .playlistName::placeholder {
-    color: #fff;
+    color: rgba(255,255,255,0.8);
 }
 
 .playlistLength {
@@ -44,7 +44,7 @@
     padding: 0.75rem 0;
     border: none;
     border-radius: 7.5rem;
-    background-color: #FA5A00;
+    background-color: #CF5E1E;
     color: #fff;
     font-size: 1rem;
     font-weight: 600;
@@ -52,5 +52,5 @@
 }
 
 .saveButton:hover {
-    background-color: #bd4905;
+    background-color: #C22B2B;
 }

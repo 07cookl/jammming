@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import styles from './Track.module.css';
+import styles from './styles/Track.module.css';
 
 function Track (props) {
     const addTrack = useCallback(

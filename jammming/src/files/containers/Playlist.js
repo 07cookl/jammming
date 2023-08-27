@@ -32,7 +32,7 @@ function Playlist (props) {
         );
         };
         return (
-            "Playlist Length: "
+            "Playlist Length: " + 
             (minutes == 60 ?
             (hours+1) + (hours == 0 ? " hr" : " hrs") :
             hours + (hours == 1 ? " hr " : " hrs ") + minutes + " mins")

@@ -25,9 +25,13 @@
     background-color: transparent;
     width: 1.5rem;
     height: 1.5rem;
-    margin-right: 0.5rem;
+    margin-left: 0.5rem;
     border: none;
     background-image: url(../../Designs/search.png);
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+.buttonSubmit:hover {
+    cursor: pointer;
 }

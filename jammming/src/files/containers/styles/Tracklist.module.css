@@ -10,6 +10,7 @@ html {
     justify-content: flex-start;
     overflow-x: scroll;
     overflow-y: hidden;
+    scrollbar-color: linear-gradient(to right, #F5A62F 0%, #C22B2B 100%);
 }
 
 .tracklistPlaylist {
@@ -20,19 +21,33 @@ html {
     align-items: center;
     flex-direction: column;
     overflow-y: scroll;
+    scrollbar-color: linear-gradient(to bottom, #F5A62F 0%, #C22B2B 100%);
 }
 
-/* ::-webkit-scrollbar {
+.tracklistSearch::-webkit-scrollbar, .tracklistPlaylist::-webkit-scrollbar {
     width: 8px;
 }
 
-::-webkit-scrollbar-track {
+.tracklistSearch::-webkit-scrollbar-track, .tracklistPlaylist::-webkit-scrollbar {
     background: transparent;
 }
 
-::-webkit-scrollbar-thumb {
-    background: #f8b500;
+.tracklistPlaylist::-webkit-scrollbar {
+    background: linear-gradient(to bottom, #F5A62F 0%, #C22B2B 100%);
     border-radius: 10px;
     border: 2.5px solid transparent;
     background-clip: content-box;
-} */
+}
+
+.tracklistSearch::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, #F5A62F 0%, #C22B2B 100%);
+    border-radius: 10px;
+    border: 2.5px solid transparent;
+    background-clip: content-box;
+}
+
+.tracklistSearch::after, tracklistPlaylist::after {
+    content: '';
+    display: table;
+    clear: both;
+}

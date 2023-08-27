@@ -30,7 +30,7 @@ html {
 }
 
 .songTitle {
-    color: #fff;
+    color: rgba(255,255,255,0.8);
     margin: 0;
     font-weight: 700;
     font-size: 1.125rem;
@@ -55,7 +55,7 @@ html {
     width: 1.5rem;
     font-size: 1.5rem;
     text-align: center;
-    background-color: #FA5A00;
+    background-color: #CF5E1E;
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -96,7 +96,7 @@ html {
     justify-content: flex-start;
     flex-direction: column;
     width: 8rem;
-    color: #fff;
+    color: rgba(255,255,255,0.8);
     margin: 0;
     font-weight: 600;
     font-size: 1.125rem;
@@ -124,7 +124,7 @@ html {
     width: 1.5rem;
     font-size: 1.5rem;
     text-align: center;
-    background-color: #FA5A00;
+    background-color: #CF5E1E;
     color: #fff;
     border: none;
     border-radius: 50%;
