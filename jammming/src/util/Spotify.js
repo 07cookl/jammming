@@ -51,12 +51,16 @@ getAccessToken() {
     const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
     const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
 
+    console.log(`Checkpoint X: ${accessTokenMatch}`);
+    console.log(`Checkpoint Y: ${expiresInMatch}`);
+
     if (accessTokenMatch && expiresInMatch) {
       accessToken = accessTokenMatch[1];
       console.log(`Checkpoint D: ${accessToken}`);
       const expiresIn = Number(expiresInMatch[1]);
       window.setTimeout(() => accessToken = '', expiresIn * 1000);
       window.history.pushState('Access Token', null, '/'); // This clears the parameters, allowing us to grab a new access token when it expires.
+      console.log('This has worked');
       return accessToken;
     } else {
       console.log('This hasn\'t worked');
