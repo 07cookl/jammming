@@ -31,14 +31,11 @@ getAccessToken() {
   if (accessToken) {
     return accessToken;
   }
-  console.log(`Checkpoint A: ${accessToken}`);
   const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
   const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
-  console.log(`Checkpoint B: ${accessTokenMatch}`);
-  console.log(`Checkpoint C: ${expiresInMatch}`);
+
   if (accessTokenMatch && expiresInMatch) {
     accessToken = accessTokenMatch[1];
-    console.log(`Checkpoint D: ${accessToken}`);
     const expiresIn = Number(expiresInMatch[1]);
     window.setTimeout(() => accessToken = '', expiresIn * 1000);
     window.history.pushState('Access Token', null, '/'); // This clears the parameters, allowing us to grab a new access token when it expires.
@@ -46,25 +43,6 @@ getAccessToken() {
   } else {
     const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
     window.location = accessUrl;
-    console.log(`Checkpoint E: accessUrl`);
-
-    const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
-    const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
-
-    console.log(`Checkpoint X: ${accessTokenMatch}`);
-    console.log(`Checkpoint Y: ${expiresInMatch}`);
-
-    if (accessTokenMatch && expiresInMatch) {
-      accessToken = accessTokenMatch[1];
-      console.log(`Checkpoint D: ${accessToken}`);
-      const expiresIn = Number(expiresInMatch[1]);
-      window.setTimeout(() => accessToken = '', expiresIn * 1000);
-      window.history.pushState('Access Token', null, '/'); // This clears the parameters, allowing us to grab a new access token when it expires.
-      console.log('This has worked');
-      return accessToken;
-    } else {
-      console.log('This hasn\'t worked');
-    }
   }
 },
 
@@ -95,7 +73,7 @@ async savePlaylist(name, trackUris) {
   if (!name || !trackUris.length) {
     return;
   }
-  console.log(`Checkpoint F: `);
+
   const accessToken = Spotify.getAccessToken();
   await new Promise(resolve => setTimeout(resolve, 2000));
   const headers = { Authorization: `Bearer ${accessToken}` };

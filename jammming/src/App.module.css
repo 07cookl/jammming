@@ -50,3 +50,28 @@ html {
   font-weight: 400;
   color: rgba(255,255,255,0.8);
 }
+
+.signInButton {
+  width: 20rem;
+  padding: 0.75rem 0;
+  border: none;
+  border-radius: 7.5rem;
+  background-color: #CF5E1E;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.signInButton img {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  position: absolute;
+  left: 40%;
+}
+
+.signInButton:hover {
+  background-color: #C22B2B;
+}

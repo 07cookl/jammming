@@ -3,6 +3,7 @@ import SearchBar from './files/containers/SearchBar.js';
 import SearchResults from './files/containers/SearchResults.js';
 import Playlist from './files/containers/Playlist.js';
 import logo from './files/Designs/headphone.png';
+import spotifyLogo from './files/Designs/spotify.png';
 import styles from './App.module.css';
 import Spotify from './util/Spotify.js'
 
@@ -48,6 +49,7 @@ function App() {
           <h3 className={styles.tagline}>What are you jammming to today?</h3>
         </div>
       </div>
+      <button className={styles.signInButton} onClick={savePlaylist}><img src={spotifyLogo} alt="" />Sign In</button>
       <SearchBar onSearch={search} />
       <div>
         <SearchResults searchResults={searchResults} onAdd={addTrack} />
