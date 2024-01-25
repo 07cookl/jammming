@@ -49,7 +49,7 @@ function App() {
           <h3 className={styles.tagline}>What are you jammming to today?</h3>
         </div>
       </div>
-      <button className={styles.signInButton} onClick={savePlaylist}><img src={spotifyLogo} alt="" />Sign In</button>
+      <button className={styles.signInButton} onClick={Spotify.getAccessToken()}><img src={spotifyLogo} alt="" />Sign In</button>
       <SearchBar onSearch={search} />
       <div>
         <SearchResults searchResults={searchResults} onAdd={addTrack} />
